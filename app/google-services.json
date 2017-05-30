@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "1089677795017",
+    "firebase_url": "https://child-tracking-system-7fced.firebaseio.com",
+    "project_id": "child-tracking-system-7fced",
+    "storage_bucket": "child-tracking-system-7fced.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089677795017:android:43582112efb5ca3d",
+        "android_client_info": {
+          "package_name": "com.child.tracking.system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1089677795017-3g4uvr4mpup3vgkri6hpj76ugrn35ef8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.child.tracking.system",
+            "certificate_hash": "6500eefb9b2043f561bbb320204b923abfda3909"
+          }
+        },
+        {
+          "client_id": "1089677795017-tvppe03j689as6leb01m49fdjq2gnfl3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.child.tracking.system",
+            "certificate_hash": "9f97f8a8a23093ad68f547c387da512b3c55ba97"
+          }
+        },
+        {
+          "client_id": "1089677795017-qopv597ihnis4i669hf6g9fdr4sk1o8j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv05KuNcOpDT_lBIRuRyfCS8eDo9-qC0U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1089677795017-qopv597ihnis4i669hf6g9fdr4sk1o8j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
