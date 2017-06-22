@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             if (getIntent().getExtras() != null) {
                 String lat = getIntent().getExtras().getString("latitude");
                 String lng = getIntent().getExtras().getString("longitude");
+                Log.d("hi",getIntent().getExtras().toString());
                 geocoder = new Geocoder(MainActivity.this, Locale.ENGLISH);
                 try {
                     addresses = geocoder.getFromLocation(Double.parseDouble(lat), Double.parseDouble(lng), 1);

@@ -63,7 +63,7 @@
                         android:textColorHint="#ffffffff"
                         android:textColor="#ffffffff" />
 
-                    <Button
+                    <android.support.v7.widget.AppCompatButton
                         android:id="@+id/email_sign_in_button"
                         style="?android:textAppearanceSmall"
                         android:layout_width="match_parent"
@@ -89,7 +89,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign up"
+            android:text="@string/sign_up"
             android:id="@+id/signUpTextView"
             android:autoLink="web"
             android:textColor="#ffffffff" />

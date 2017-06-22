@@ -8,4 +8,5 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign In</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="sign_up">Sign up</string>
 </resources>
