@@ -115,6 +115,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
             else {
+                String lat = "0";
+                String lng = "0";
                 googleMap.setMyLocationEnabled(true);
             }
         }
