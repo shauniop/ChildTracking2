@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context="com.child.tracking.system.MainActivity">
     <include layout="@layout/fragment_map" />
+    <include android:id="@+id/tool_bar" layout="@layout/tool_bar" />
+
 
 
 </RelativeLayout>

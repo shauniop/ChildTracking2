@@ -46,10 +46,9 @@
                 <LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:orientation="vertical">
 
-                    <AutoCompleteTextView android:id="@+id/email" android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:hint="@string/prompt_email"
-                        android:inputType="textEmailAddress" android:maxLines="1"
-                        android:singleLine="true"
+                    <EditText android:id="@+id/st_id" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:hint="@string/prompt_id"
+                        android:maxLines="1"
                         android:layout_marginBottom="10dp"
                         android:textColorHint="#ffffffff"
                         android:textColor="#ffffffff" />
@@ -58,7 +57,7 @@
                         android:layout_height="wrap_content" android:hint="@string/prompt_password"
                         android:imeActionLabel="@string/action_sign_in"
                         android:imeOptions="actionUnspecified" android:inputType="textPassword"
-                        android:maxLines="1" android:singleLine="true"
+                        android:maxLines="1"
                         android:layout_marginBottom="10dp"
                         android:textColorHint="#ffffffff"
                         android:textColor="#ffffffff" />
@@ -69,7 +68,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                          android:textStyle="bold"
+                        android:textStyle="bold"
+                        android:text="@string/login"
                         android:onClick="actualEntry"
                         android:background="#ff7e51c2"
                         />
@@ -77,21 +77,5 @@
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="bottom|center_horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sign_up"
-            android:id="@+id/signUpTextView"
-            android:autoLink="web"
-            android:textColor="#ffffffff" />
     </LinearLayout>
 </LinearLayout>

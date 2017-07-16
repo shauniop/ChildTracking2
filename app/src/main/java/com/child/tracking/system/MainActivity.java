@@ -13,6 +13,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -24,7 +25,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private SQLiteDatabase db;
     Geocoder geocoder;
     List<Address> addresses;
+    android.support.v7.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,33 +86,34 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             if (getIntent().getExtras() != null) {
                 String lat = getIntent().getExtras().getString("latitude");
                 String lng = getIntent().getExtras().getString("longitude");
-                Log.d("hi",getIntent().getExtras().toString());
-                geocoder = new Geocoder(MainActivity.this, Locale.ENGLISH);
-                try {
-                    addresses = geocoder.getFromLocation(Double.parseDouble(lat), Double.parseDouble(lng), 1);
-                    Log.d("Location","is "+addresses.get(0).getAddressLine(0)+", "+addresses.get(0).getLocality());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                db=openOrCreateDatabase("PersonDB", Context.MODE_PRIVATE, null);
-                db.execSQL("CREATE TABLE IF NOT EXISTS persons(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, latitude VARCHAR,longitude VARCHAR);");
-                String query = "INSERT INTO persons (latitude,longitude) VALUES('"+lat+"', '"+lng+"');";
-                db.execSQL(query);
-                Toast.makeText(getApplicationContext(),"Saved Successfully", Toast.LENGTH_LONG).show();
-                if (lat != null && lng != null) {
-                    Double latitude = Double.parseDouble(lat);
-                    Double longitude = Double.parseDouble(lng);
-                    googleMap.addMarker(new MarkerOptions()
-                            .position(new LatLng(latitude, longitude))
-                            .title("Marker"));
+                if(lat!=null) {
+                    Log.d("hi", getIntent().getExtras().toString());
+                    geocoder = new Geocoder(MainActivity.this, Locale.ENGLISH);
+//                try {
+//                    addresses = geocoder.getFromLocation(Double.parseDouble(lat), Double.parseDouble(lng), 1);
+//                    Log.d("Location","is "+addresses.get(0).getAddressLine(0)+", "+addresses.get(0).getLocality());
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+                    db = openOrCreateDatabase("PersonDB", Context.MODE_PRIVATE, null);
+                    String query = "INSERT INTO persons (latitude,longitude) VALUES('" + lat + "', '" + lng + "');";
+                    db.execSQL(query);
+                    Toast.makeText(getApplicationContext(), "Saved Successfully", Toast.LENGTH_LONG).show();
+                    if (lat != null && lng != null) {
+                        Double latitude = Double.parseDouble(lat);
+                        Double longitude = Double.parseDouble(lng);
+                        googleMap.addMarker(new MarkerOptions()
+                                .position(new LatLng(latitude, longitude))
+                                .title("Marker"));
 
-                    CameraPosition cameraPosition = new CameraPosition.Builder()
-                            .target(new LatLng(latitude, longitude))      // Sets the center of the map to location user
-                            .zoom(15)                                     // Sets the zoom
-                            .bearing(0)                                   // Sets the orientation of the camera to east
-                            .tilt(30)                                       // Sets the tilt of the camera to 30 degrees
-                            .build();                   // Creates a CameraPosition from the builder
-                    googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                        CameraPosition cameraPosition = new CameraPosition.Builder()
+                                .target(new LatLng(latitude, longitude))      // Sets the center of the map to location user
+                                .zoom(15)                                     // Sets the zoom
+                                .bearing(0)                                   // Sets the orientation of the camera to east
+                                .tilt(30)                                       // Sets the tilt of the camera to 30 degrees
+                                .build();                   // Creates a CameraPosition from the builder
+                        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                    }
                 }
             }
             else {
@@ -121,4 +123,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }
     }
+    public void checkHistory(View v){
+        Intent intent = new Intent(MainActivity.this, DisplayData.class);
+        startActivity(intent);
+
+    }
+
+
 }

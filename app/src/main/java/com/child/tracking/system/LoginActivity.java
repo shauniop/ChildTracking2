@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,10 +30,9 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        if(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ed1=(EditText)findViewById(R.id.email);
+        ed1=(EditText)findViewById(R.id.st_id);
         ed2=(EditText)findViewById(R.id.password);
 
     }
@@ -44,18 +44,24 @@ public class LoginActivity extends AppCompatActivity {
         root.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String pswd = dataSnapshot.getValue().toString();
-                Log.d("StudentPassword", pswd);
-                if (pswd.equals(password)) {
-                    SharedPreferences.Editor editor = sharedpreferences.edit();
-                    Log.d("DataSnapshot: ",dataSnapshot.toString());
-                    Log.d("user", id);
-                    editor.putString(Id, id);
-                    editor.apply();
+                    String pswd = dataSnapshot.getValue().toString();
+                    Log.d("StudentPassword", pswd);
+                    if (pswd.equals(password)) {
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        Log.d("DataSnapshot: ", dataSnapshot.toString());
+                        Log.d("user", id);
+                        editor.putString(Id, id);
+                        editor.apply();
 
-                    Intent intent = new Intent(LoginActivity.this, DisplayData.class);
-                    startActivity(intent);
-                }
+                        Intent intent = new Intent(LoginActivity.this, DisplayData.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(),"Wrong Username or Password", Toast.LENGTH_LONG).show();
+                        ed1.setText("");
+                        ed2.setText("");
+                    }
             }
 
             @Override

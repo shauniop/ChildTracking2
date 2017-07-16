@@ -8,20 +8,9 @@
 
     <TextView
         android:id="@+id/viewDatabase"
-        android:layout_width="380dp"
-        android:layout_height="419dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="2dp" />
 
-    <Button
-        android:id="@+id/showDb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/viewDatabase"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
-        android:onClick="viewAll"
-        android:text="Button"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="424dp" />
 </RelativeLayout>
