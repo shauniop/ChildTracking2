@@ -1,5 +1,5 @@
 package com.child.tracking.system;
-
+// developed for child trcking
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     public static final String MyPREFERENCES = "MyPrefs" ;
     public static final String Id = "stdIdKey";
     public static final String Id2 = "name";
-
+//creating login screen and editing text
 
     SharedPreferences sharedpreferences;
     EditText ed1,ed2;
