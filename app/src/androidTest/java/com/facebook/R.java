@@ -7,18 +7,7 @@
 package com.facebook;
 
 public final class R {
-    public static final class anim {
-        public static final int abc_fade_in = 0x7f050000;
-        public static final int abc_fade_out = 0x7f050001;
-        public static final int abc_grow_fade_in_from_bottom = 0x7f050002;
-        public static final int abc_popup_enter = 0x7f050003;
-        public static final int abc_popup_exit = 0x7f050004;
-        public static final int abc_shrink_fade_out_from_bottom = 0x7f050005;
-        public static final int abc_slide_in_bottom = 0x7f050006;
-        public static final int abc_slide_in_top = 0x7f050007;
-        public static final int abc_slide_out_bottom = 0x7f050008;
-        public static final int abc_slide_out_top = 0x7f050009;
-    }
+    
     public static final class attr {
         public static final int actionBarDivider = 0x7f01008f;
         public static final int actionBarItemBackground = 0x7f010090;
